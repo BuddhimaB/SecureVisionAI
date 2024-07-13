@@ -1,0 +1,28 @@
+.RegisterContainer{
+    
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    
+}
+.RegisterWrapper{
+    height: calc(100vh - 170px);
+}
+
+
+
+.passwordWrapper{
+    position: relative;
+    display: inline-block;
+      }
+    .loginInputPassword{
+        height: 50px;
+        width: 95%;
+      border-radius: 10px;
+      border: 1px solid gray;
+      font-size: 18px;
+      padding-left: 20px;
+    }
+    .loginInputPassword:focus{
+        outline: none;
+    }

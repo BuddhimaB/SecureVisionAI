@@ -1,0 +1,64 @@
+.RegisterContainer{
+    
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    
+}
+.RegisterWrapper{
+    height: calc(100vh - 170px);
+}
+
+
+
+.inputField {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+.passwordContainer {
+    width: 100;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.passwordContainer .inputField {
+    flex: 1;
+}
+
+.toggle-btn {
+    position: absolute;
+    right: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    color: #007bff;
+}
+
+.RegisterButton {
+    width: 100%;
+    padding: 10px;
+   
+   
+    border: none;
+    cursor: pointer;
+}
+
+.RegisterButton:hover {
+    background-color: #0056b3;
+}
+
+.fogotPass {
+    
+    cursor: pointer;
+    
+}
+
+.fogotPass:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
