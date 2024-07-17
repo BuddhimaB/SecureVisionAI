@@ -1,8 +1,6 @@
 import './Login.css'
 import Topbar from '../../components/Topbar/Topbar'
 import Bottom from '../../components/BottomDetails/Bottom'
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 
 export default function Login() {
   const [username, setUsername] = useState('');
@@ -34,18 +32,13 @@ export default function Login() {
           type="text" 
           placeholder="Username" 
           value={username}
-          onChange={(e)=>setUsername(e.target.value)}/>
+          onChange={()}/>
           
           <input className='inputField' 
           type="password" 
-          placeholder="Password" 
-          value={password}
-          onChange={(e)=>setPassword(e.target.value)}/>
-
-
-
+          placeholder="Password" />
           </div>
-          <button className="loginButton" onClick={handleLogin}>Login</button>
+          <button className="loginButton">Login</button>
           <span className='fogotPass'>Forgot Password?</span>
         </div>
         

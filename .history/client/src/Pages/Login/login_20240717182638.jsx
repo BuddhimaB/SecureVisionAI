@@ -40,12 +40,12 @@ export default function Login() {
           type="password" 
           placeholder="Password" 
           value={password}
-          onChange={(e)=>setPassword(e.target.value)}/>
+          onChange={()}/>
 
 
 
           </div>
-          <button className="loginButton" onClick={handleLogin}>Login</button>
+          <button className="loginButton">Login</button>
           <span className='fogotPass'>Forgot Password?</span>
         </div>
         

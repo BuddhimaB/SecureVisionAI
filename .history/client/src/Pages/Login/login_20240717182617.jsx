@@ -38,14 +38,12 @@ export default function Login() {
           
           <input className='inputField' 
           type="password" 
-          placeholder="Password" 
-          value={password}
-          onChange={(e)=>setPassword(e.target.value)}/>
+          placeholder="Password" />
 
 
-
+          
           </div>
-          <button className="loginButton" onClick={handleLogin}>Login</button>
+          <button className="loginButton">Login</button>
           <span className='fogotPass'>Forgot Password?</span>
         </div>
         

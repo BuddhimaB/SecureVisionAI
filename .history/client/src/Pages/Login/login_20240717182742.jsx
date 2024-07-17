@@ -45,7 +45,7 @@ export default function Login() {
 
 
           </div>
-          <button className="loginButton" onClick={handleLogin}>Login</button>
+          <button className="loginButton" on>Login</button>
           <span className='fogotPass'>Forgot Password?</span>
         </div>
         
