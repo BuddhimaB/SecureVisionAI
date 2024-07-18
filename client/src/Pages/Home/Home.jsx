@@ -40,9 +40,10 @@ const Home = () => {
                     <h2>Users</h2>
                     <div className="user-images">
                         {/* Placeholder for user images, replace src with actual image URLs */}
-                        <img src="/path/to/user1.jpg" alt="User 1" />
-                        <img src="/path/to/user2.jpg" alt="User 2" />
-                        <img src="/path/to/user3.jpg" alt="User 3" />
+                        <img src="https://static-00.iconduck.com/assets.00/user-icon-2048x2048-ihoxz4vq.png" alt="User 1" />
+                        <img src="https://static-00.iconduck.com/assets.00/user-icon-2048x2048-ihoxz4vq.png" alt="User 2" />
+                        <img src="https://static-00.iconduck.com/assets.00/user-icon-2048x2048-ihoxz4vq.png" alt="User 3" />
+                        <img src="https://cdn.pixabay.com/photo/2017/08/16/00/29/add-person-2646097_960_720.png" alt="User 3" />
                     </div>
                 </div>
             </div>
