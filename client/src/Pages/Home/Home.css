@@ -1,0 +1,91 @@
+
+.dashboard-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    border-bottom: 1px solid #ccc; /* Line separating sections */
+}
+
+.left-section {
+    flex: 1;
+    margin-right: 20px;
+    padding-right: 20px;
+    border-right: 1px solid #ccc; /* Vertical line dividing sections */
+}
+
+.right-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.right-section-top {
+    margin-bottom: 20px;
+}
+
+
+
+.right-section-bottom {
+    margin-top: 20px;
+    border-top: 1px solid #ccc;;
+}
+
+.toggle-switch {
+    display: flex;
+    align-items: center;
+}
+
+.toggle-switch h3 {
+    margin-right: 10px;
+}
+
+.last-intrusion {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.last-intrusion h3{
+    margin: 10px;
+}
+.last-intrusion img {
+    max-width: 50%;
+    height: auto;
+}
+
+.last-intrusion video{
+    max-width: 100%;
+    height: auto;
+}
+
+.users-section {
+    text-align: center;
+}
+
+.users-section h2 {
+    margin-bottom: 10px;
+}
+
+.user-images {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    border-radius: 50%;
+}
+
+.user-images img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+.camera-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Adjusted for larger video frames */
+    gap: 10px;
+}
+
+.camera-grid video {
+    width: 100%;
+    height: auto; /* Ensures videos maintain aspect ratio */
+}
+
+
