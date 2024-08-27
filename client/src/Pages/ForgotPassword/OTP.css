@@ -1,21 +1,18 @@
-.feedContainer{
+.otpContainer {
     display: flex;
     justify-content: center;
     align-items: center;
     height: calc(100vh - 150px);
-    
-    
 }
-.feedLeft{
+.otpLeft {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 50%;
     height: calc(100vh - 110px);
-    
 }
-.inputField{
+.inputField {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -25,41 +22,25 @@
     border-radius: 40px;
     width: 80%;
 }
-.inputField > input{
+.otpInputField {
     width: 100%;
     padding: 10px;
-    
-   
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    text-align: center;
     margin-bottom: 10px;
 }
-.loginButton{
+.otpButton {
     padding: 10px;
     border-radius: 40px;
     width: 77%;
-   
-    color:black;
+    color: black;
     font-weight: 700;
     cursor: pointer;
     margin-bottom: 10px;
-}
-.loginButton:hover{
     background-color: #9b1cc2;
-    color:white
+    color: white;
 }
-.fogotPass{
-    font-weight: 700;
-    cursor: pointer;
-
-}
-.fogotPass:hover{
-    color: #9b1cc2;
-    text-decoration: underline;
-}
-.feedRight{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 50%;
-    height: calc(100vh - 110px);
-    background-color: #fff;
+.otpButton:hover {
+    background-color: #7a0a9b;
 }
