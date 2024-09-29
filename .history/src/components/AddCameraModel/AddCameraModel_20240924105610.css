@@ -1,0 +1,111 @@
+/* Floating button style */
+.floating-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #6200ea;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 1000; /* Ensure the floating button appears on top */
+}
+
+.floating-button:hover {
+  background-color: #4a00c4;
+}
+
+/* Modal overlay style */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999; /* Ensure the modal appears in front of other elements */
+}
+
+/* Modal content style */
+.modal-content {
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  width: 500px; /* Adjust the width as needed */
+  max-width: 100%; /* Ensure responsiveness */
+  position: relative;
+  z-index: 1001; /* Ensure the modal content stays above the overlay */
+}
+
+/* Modal header styles */
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e9ecef;
+  padding-bottom: 10px;
+}
+
+.modal-title {
+  margin: 0;
+  font-size: 1.25rem;
+  color: #333;
+}
+
+/* Close button styles */
+.close {
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #ff0000;
+}
+
+/* Modal footer styles */
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  border-top: 1px solid #e9ecef;
+  padding-top: 10px;
+}
+
+.btn-primary {
+  background-color: #6200ea;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-left: 10px;
+}
+
+.btn-primary:hover {
+  background-color: #4a00c4;
+}
+
+.btn-secondary {
+  background-color: #ccc;
+  color: #333;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.btn-secondary:hover {
+  background-color: #bbb;
+}

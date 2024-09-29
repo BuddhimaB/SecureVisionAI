@@ -1,0 +1,47 @@
+{
+  "details":[
+  ],
+  "messages": [],
+  
+  
+  "blogs": [
+    {
+      "id": "1",
+      "formData": {
+        "username": "Akshiya",
+        "firstName": "Akshi",
+        "lastName": "Ravi",
+        "email": "rakshiya2001@gmail.com",
+        "role": "propertyOwner",
+        "selectedCameras": []
+      }
+    },
+    {
+      "id": "a7b1",
+      "formData": {
+        "username": "Yosith",
+        "firstName": "Yos",
+        "lastName": "Balasooriya",
+        "email": "yos@example.com",
+        "role": "generalUser",
+        "selectedCameras": [
+          "Camera 1",
+          "Camera 3"
+        ]
+      }
+    },
+    {
+      "id": "dcf2",
+      "formData": {
+        "username": "Zaky",
+        "firstName": "Ahamed",
+        "lastName": "Zaky",
+        "email": "zaky@example.com",
+        "role": "generalUser",
+        "selectedCameras": [
+          "Camera 2"
+        ]
+      }
+    }
+  ]
+}
