@@ -1,0 +1,29 @@
+/* Styling for the IP Camera form */
+#ipCameraForm {
+    margin: 10px 0;
+  }
+  
+  #ipCameraForm .form-group {
+    margin-bottom: 15px;
+  }
+  
+  #ipCameraForm label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  #ipCameraForm input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  #ipCameraForm input:focus {
+    border-color: #6200ea;
+    outline: none;
+  }
+  
+  
