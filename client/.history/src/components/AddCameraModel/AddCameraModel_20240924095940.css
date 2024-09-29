@@ -1,0 +1,37 @@
+/* Styling for the Add Camera modal */
+.modal-content {
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  .modal-header {
+    border-bottom: 1px solid #e9ecef;
+  }
+  
+  .modal-footer {
+    border-top: 1px solid #e9ecef;
+  }
+  
+  .modal-title {
+    color: #333;
+  }
+  
+  .btn-primary {
+    background-color: #6200ea;
+    border: none;
+  }
+  
+  .btn-primary:hover {
+    background-color: #4a00c4;
+  }
+  
+  .btn-secondary {
+    background-color: #ccc;
+    color: #333;
+    border: none;
+  }
+  
+  .btn-secondary:hover {
+    background-color: #bbb;
+  }
+  

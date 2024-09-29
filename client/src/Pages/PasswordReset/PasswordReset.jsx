@@ -4,11 +4,20 @@ import Bottom from '../../components/BottomDetails/Bottom'
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Main from '../../assets/Mainimg.jpg';
+import './PasswordReset.css'
 function PasswordReset() {
     const [newPassword, setNewPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
+    const [passwordVisible, setPasswordVisible] = useState(false);
+    const [confirmPasswordVisible, setConfirmPasswordVisible] = useState(false);
     const navigate = useNavigate();
+    const togglePasswordVisibility = () => {
+      setPasswordVisible(!passwordVisible);
+    };
 
+    const toggleConfirmPasswordVisibility = () => {
+        setConfirmPasswordVisible(!confirmPasswordVisible);
+    };
     const handleInputChange1 = (e) => {
         setNewPassword(e.target.value);
       };
@@ -32,23 +41,40 @@ function PasswordReset() {
       <div className='feedContainer'>
         <div className="feedLeft">
           <h1>Reset Password</h1>
-          <div className="inputField">                    
-            <label>New Password:</label>
-            <input
-              type="password"
-              name="newpassword"
-              value={newPassword}
-              onChange={handleInputChange1}
-              placeholder='New Password'
-            />
-            <label>Confirm Password:</label>
-            <input
-              type="password"
-              name="confirmpassword"
-              value={confirmPassword}
-              onChange={handleInputChange2}
-              placeholder='Confirm Password'
-            />         
+          
+          <div>            
+            <input 
+             
+            type={passwordVisible ? 'text' : 'password'}
+            name="newpassword" 
+            value={newPassword}
+            onChange={handleInputChange1}
+            placeholder='New Password' />
+            
+            <button 
+                type="button" 
+                onClick={togglePasswordVisibility}
+                className="toggle-btn"
+            >
+                {passwordVisible ? 'Hide' : 'Show'}
+            </button>
+          </div>
+          <div className="inputField1">            
+            <input 
+            
+            type={confirmPasswordVisible ? 'text' : 'password'}
+            name="confirmpassword"
+            value={confirmPassword}
+            onChange={handleInputChange2}
+            placeholder='Confirm Password' />
+            
+            <button 
+                type="button" 
+                onClick={toggleConfirmPasswordVisibility}
+                className="toggle-btn"
+            >
+                {confirmPasswordVisible ? 'Hide' : 'Show'}
+            </button>
           </div>
           <button className='btn' onClick={handleSubmit}>Reset Password</button>
         </div>
