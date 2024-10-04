@@ -1,13 +1,14 @@
 /* Styling for the fixed Add Camera button */
 .fixed-button {
-  position: fixed;
+
   top: 70px; /* Adjust this value to your preference */
   left: 20px; /* Adjust this value to your preference */
   background-color: #6200ea;
   color: #fff;
   border: none;
   border-radius: 8px; /* Rounded corners */
-  width: 120px; /* Adjust width as needed */
+  padding: 10px 20px;
+  width: 50%;
   height: 40px; /* Adjust height as needed */
   font-size: 16px;
   cursor: pointer;
@@ -17,6 +18,7 @@
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
   z-index: 1000;
   transition: background-color 0.3s ease; /* Smooth hover transition */
+  margin: 0px auto;
 }
 
 .fixed-button:hover {
@@ -103,4 +105,19 @@
 
 .btn-secondary:hover {
   background-color: #bbb;
+}
+.radio-group {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  margin: 10px;
+}
+
+.radio-group label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.radio-group input[type="radio"] {
+  margin-right: 8px;
+  accent-color: #6A5ACD; /* Customize the radio button color */
 }

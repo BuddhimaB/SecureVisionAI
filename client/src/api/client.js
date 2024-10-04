@@ -11,6 +11,7 @@ export const register = async (firstName, lastName, email, password) => {
             password,
         });
         return response.data;
+        
     } catch (error) {
         throw error.response.data; // Handle backend error
     }
@@ -25,7 +26,7 @@ export const login = async (email, password) => {
       password,
     });
 
-    console.log('Backend response:', response.data);
+    console.log('Backend response when logging:', response);
 
     return response.data; // Return the response data from the backend
   } catch (error) {

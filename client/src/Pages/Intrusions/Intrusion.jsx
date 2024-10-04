@@ -105,7 +105,7 @@ const Intrusion = () => {
         </div>
       )}
 
-      <Bottom />
+     
     </>
   );
 };

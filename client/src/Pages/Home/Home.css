@@ -12,15 +12,15 @@
 .left-section {
     flex: 1;
     margin-right: 20px;
-    padding: 15px 20px 10px 15px;
+    /* padding: 15px 20px 10px 15px;
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    background: white;
+    background: white; */
     max-height: 440px;
     position: sticky;
     top: 150px;
     height: calc(100vh - 96px);
-    overflow: scroll;
+    /* overflow: scroll; */
 }
 
 .left-section.expanded {
@@ -125,9 +125,11 @@
 }
 .camera-section {
     display: flex;
+    
     flex-direction: column;
-    align-items: center;
-    margin-top: 20px;
+    
+    margin-bottom: 20px;
+    
   }
   
   .delete-button {
@@ -140,6 +142,33 @@
   }
   .delete-button:hover {
     background-color: darkred;
+  }
+  .record-video-button{
+    display: block;
+    width: 30%;
+
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+    margin-bottom: 20px;
+    margin-top: 80px;
+  }
+  .left-section-buttons{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+
+  .record-btn{
+    display: flex;
+    width:50%;
+    margin: 20px auto;
+    justify-content: center;
   }
   
 

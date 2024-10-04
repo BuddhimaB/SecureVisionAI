@@ -1,0 +1,122 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider      = "prisma-client-js"
+  binaryTargets = ["native", "debian-openssl-1.1.x"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            String         @id @unique @default(uuid())
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+  firstName     String         @db.VarChar(255)
+  lastName      String         @db.VarChar(255)
+  email         String         @unique @db.VarChar(255)
+  role          Role           @default(USER)
+  password      String         @db.VarChar(255)
+  Mobile_Device Mobile_Device?
+  UserSystem    UserSystem?
+  CCTV_System   CCTV_System?
+  ForgotCodes   Forgot_Code?
+}
+
+model UserSystem {
+  userId      String      @unique
+  user        User        @relation(fields: [userId], references: [id])
+  systemId    String
+  CCTV_System CCTV_System @relation(fields: [systemId], references: [id])
+}
+
+model CCTV_System {
+  id            String           @id @default(uuid())
+  ownerId       String           @unique
+  createdAt     DateTime         @default(now())
+  cameraCount   Int
+  status        System_Status    @default(STOP)
+  Mobile_Device Mobile_Device[]
+  Intrusion     Intrusion[]
+  UserSystem    UserSystem[]
+  user          User             @relation(fields: [ownerId], references: [id])
+  cameras       Camera_Details[]
+}
+
+model Camera_Details {
+  id          String        @id @default(uuid())
+  systemId    String
+  CCTV_System CCTV_System   @relation(fields: [systemId], references: [id])
+  name        String
+  type        CAMERA_TYPE
+  status      CAMERA_STATUS
+}
+
+model Forgot_Code {
+  userId    String   @unique
+  user      User     @relation(fields: [userId], references: [id])
+  token     String   @unique
+  createdAt DateTime @default(now())
+}
+
+enum CAMERA_STATUS {
+  RUNNING
+  STOP
+}
+
+enum CAMERA_TYPE {
+  IP_CAMERA
+  WEB_CAMERA
+}
+
+model Mobile_Device {
+  id       String      @id
+  system   CCTV_System @relation(fields: [systemId], references: [id])
+  systemId String
+  user     User        @relation(fields: [ownerId], references: [id])
+  ownerId  String      @unique
+
+  @@unique([id, ownerId])
+}
+
+model Intrusion {
+  id              String            @id @default(uuid())
+  occuredAt       DateTime          @default(now())
+  system          CCTV_System       @relation(fields: [systemId], references: [id])
+  systemId        String
+  Intrusion_Image Intrusion_Image[]
+  Intrusion_Video Intrusion_Video?
+
+  @@index([systemId])
+}
+
+model Intrusion_Image {
+  instrusion  Intrusion @relation(fields: [intrusionId], references: [id])
+  intrusionId String
+  image       String    @unique
+
+  @@unique([intrusionId, image])
+  @@index([intrusionId])
+}
+
+model Intrusion_Video {
+  video       String    @unique
+  intrusion   Intrusion @relation(fields: [intrusionId], references: [id])
+  intrusionId String    @unique
+
+  @@unique([video, intrusionId])
+}
+
+enum Role {
+  ADMIN
+  USER
+  OWNER
+}
+
+enum System_Status {
+  RUNNING
+  STOP
+}
