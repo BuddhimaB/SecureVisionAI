@@ -65,9 +65,8 @@ export default {
   async locallydeleteCamera(cameraId) {
         try {
           const localresponse = await localaxiosClient.delete(`delete/camera/${cameraId}`);
-          console.log('///////////////////////////////////////Local response:', localresponse?.data.status);
-          if (localresponse?.data.status === 200 || localresponse?.data.status ===201) {
-            return localresponse.data; // Return the response data directly
+          if (localresponse?.status === 200 || localresponse?.data.status ===201) {
+            return localresponse; // Return the response data directly
           }
     
           throw new Error("Error");

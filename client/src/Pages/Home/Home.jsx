@@ -34,8 +34,12 @@ const Home = () => {
   const [cameraStatus, setCameraStatus] = useState(localStorage.getItem('cameraStatus'));
   const [systemId,setSystemId] = useState(localStorage.getItem('SystemId'));
   const [isCameraVisible, setIsCameraVisible] = useState(!!cameraId); // Initialize based on cameraId
+  const [isRecording, setIsRecording] = useState(false);
 
   const [isFeedFetching, setIsFeedFetching] = useState(false);
+
+
+
 
 const handlegotoRecordings = () => {
   navigate('/recordings');
@@ -102,6 +106,7 @@ const handleDeleteCamera = async () => {
     // Optionally clear the cameraId
     setCameraId(null);
     console.log("Camera deleted successfully");
+    window.location.reload();
   } catch (error) {
     console.error("Error deleting camera:", error.message);
   }
@@ -115,6 +120,7 @@ const handleRecordCamera = async () =>{
   console.log(cameraId);
 
   const newStatus = cameraStatus === "RUNNING" ?  "STOP" : "RUNNING"; // Toggle the status
+  setIsRecording((prevState) => !prevState); // Toggle the state
   const data = {
     id: cameraId,
     systemId: systemId,
@@ -123,6 +129,7 @@ const handleRecordCamera = async () =>{
   try {
     const camResponse = await api.changeCameraMonitoringStatus(data, token);
     setCameraStatus(newStatus); // Update the status in state
+    console.log("This is the new camera Status",newStatus);
     console.log("This is the response from record camera",camResponse);
 
   }
@@ -150,13 +157,13 @@ const handleRecordCamera = async () =>{
       
 
       <div className="dashboard-container">
-      <AddCameraPopover />
-        <div className={`left-section ${showAllCameras ? 'expanded' : ''}`}>
-          <h2 className='left-title'>Active Cameras: {cameraData.length} cameras</h2>
-          <button className='btn view-more-btn' onClick={handlegotoRecordings}> Recorded Videos </button>
+      
+        <div className="left-section">
+        <AddCameraPopover />
+          <button className='btn record-btn' onClick={handlegotoRecordings}> Recorded Videos </button>
           <div className="camera-grid">
             {/* Display the current cameraId and corresponding live video feed */}
-            <p>Camera ID: {cameraId}</p> {/* Display the current cameraId */}
+           
 
             {isCameraVisible && (
               <section className="camera-section">
@@ -177,7 +184,10 @@ const handleRecordCamera = async () =>{
                     }, 1000);
                   }}
                 />
-                <button onClick={handleRecordCamera} className='record-camera'>Start Recording</button>
+                <button onClick={handleRecordCamera} className='record-camera'>
+                {isRecording ? 'Stop Recording' : 'Start Recording'}
+                </button>
+                
                 <button onClick={handleDeleteCamera} className="delete-button"> Delete Camera</button>
               </section>
             )}
@@ -189,10 +199,7 @@ const handleRecordCamera = async () =>{
 
         <div className="right-section">
           <div className="right-section-top">
-            <div className="toggle-switch">
-              <h3>Auto Detection</h3>
-              <Switch color="error" />
-            </div>
+            
             <div className="last-intrusion">
               <h3>Last Intrusion</h3>
               <p>Date and Time: {lastIntrusion.dateTime}</p>

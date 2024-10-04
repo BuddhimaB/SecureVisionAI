@@ -14,7 +14,7 @@ const visionAxios = axios.create({
 export const getCameraData = async () => {
     try {
        // const response = await visionAxios.get('876fe0e5-9e85-44b2-b4f1-220e38a01f47');
-        return response.data;
+       // return response.data;
     }
     catch (error) {
         console.error('Error while fetching camera data!', error);

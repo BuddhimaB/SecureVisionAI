@@ -49,7 +49,7 @@ const AddCameraPopover = () => {
             </button>
           </div>
           <div className="popover-body">
-            <div className="form-group">
+            {/* <div className="form-group">
               <label>Select camera type</label><br />
               <input
                 type="radio"
@@ -69,7 +69,22 @@ const AddCameraPopover = () => {
                 onChange={handleCameraTypeChange}
               />
               <label htmlFor="ipCamera">IP Camera</label>
-            </div>
+            </div> */}
+            <div class="radio-group">
+              <p>Select camera type</p>
+              <br />
+              <label>
+                  <input type="radio" id="webCamera" name="cameraType" value="web" checked={selectedCameraType === 'web'}
+                onChange={handleCameraTypeChange} />
+                  Web Camera
+              </label>
+              
+              <label>
+                  <input type="radio" id="ipCamera" name="cameraType" value="ip" checked={selectedCameraType === 'ip'}
+                onChange={handleCameraTypeChange}/>
+                  IP Camera
+              </label>
+          </div>
             {selectedCameraType === 'web' && <WebCameraForm />}
             {selectedCameraType === 'ip' && <IPCameraForm />}
           </div>

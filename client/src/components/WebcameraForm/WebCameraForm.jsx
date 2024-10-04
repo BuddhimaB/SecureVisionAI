@@ -15,7 +15,7 @@ const WebCameraForm = () => {
   const [authToken,setAuthToken] =useState(localStorage.getItem('token'));
 
       
-  const[systemId,setSystemId] = useState("1c2b187e-6ec2-4b6f-912b-04d6cbfea2b8");
+  const[systemId,setSystemId] = useState(localStorage.getItem('systemId'));
 
   useEffect(() => {
     const fetchCameraData = async () => {
@@ -86,6 +86,7 @@ const WebCameraForm = () => {
     
           if (localresponse) {
             console.log('Local camera added successfully:', localresponse);
+            window.location.reload();
           } else {
             setError("Failed to add the camera locally. Please try again.");
             console.error("Failed to add the camera locally. Response:", localresponse);
@@ -97,10 +98,7 @@ const WebCameraForm = () => {
         }
     
         // Check if the entered cameraId is '0' and start the webcam (if needed)
-        if (cameraId === '') {
-          console.log("Camera ID is 0, starting webcam...");
-          startWebcam();
-        }
+        
     
       } else {
         setError("Failed to add the camera. Please try again.");
@@ -114,22 +112,6 @@ const WebCameraForm = () => {
     }
   }; // Make sure this bracket closes the addCamera function
   
-  // Function to start the webcam
-  const startWebcam = async () => {
-    try {
-      // Request access to the user's webcam
-      const stream = await navigator.mediaDevices.getUserMedia({ video: true });
-
-      // Set the video stream to the video element
-      if (videoRef.current) {
-        videoRef.current.srcObject = stream;
-        setIsStreaming(true);
-      }
-    } catch (error) {
-      console.error("Error accessing webcam: ", error);
-      setIsStreaming(false);
-    }
-  };
 
   // Cleanup function to stop the webcam stream when the component unmounts
   useEffect(() => {

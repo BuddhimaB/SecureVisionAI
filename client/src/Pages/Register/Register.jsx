@@ -55,6 +55,7 @@ export default function Register() {
         try {
             // Call the API to register
             const response = await register(firstName, lastName, email, password);
+            console.log('Backend response when registering:', response);
 
             if (response) {
                 console.log('Registration Successful:', response);

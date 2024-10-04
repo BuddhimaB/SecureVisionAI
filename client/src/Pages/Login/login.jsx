@@ -20,7 +20,9 @@ export default function Login() {
     try {
       const response = await login(email, password);
   
-      console.log('Login response from backend:', response); // Log response from backend
+      console.log('Login response from backend:', response);
+      console.log("assumed systemId is: ",response.data.user.CCTV_System.id)
+      localStorage.setItem('systemId',response.data.user.CCTV_System.id) // Log response from backend
   
       // Check for response.data and token inside the data object
       if (response && response.data && response.data.token) {
