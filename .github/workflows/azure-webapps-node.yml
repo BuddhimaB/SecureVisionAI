@@ -19,12 +19,12 @@
 
 on:
   push:
-    branches: [ "Testing-web-Application" ]
+    branches: [ "node-server" ]
   workflow_dispatch:
 
 env:
   AZURE_WEBAPP_NAME: secure-vision-AI    # Set this to your application's name
-  AZURE_WEBAPP_PACKAGE_PATH: 'server'      # Set this to the path to your web app project
+  AZURE_WEBAPP_PACKAGE_PATH: '.'      # Set this to the path to your web app project
   NODE_VERSION: '20.x'                    # Set this to the node version to use
 
 permissions:
@@ -44,7 +44,6 @@ jobs:
 
     - name: npm install, build, and test
       run: |
-        cd ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}  # Navigate to the server folder
         npm install || { echo "npm install failed"; exit 1; }
         npm run build --if-present
         npm run test --if-present
