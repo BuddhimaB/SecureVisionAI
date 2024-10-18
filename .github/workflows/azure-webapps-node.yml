@@ -75,4 +75,4 @@ jobs:
       with:
         app-name: ${{ env.AZURE_WEBAPP_NAME }}  # Use the environment variable for app name
         publish-profile: ${{ secrets.AZURE_WEB_APP_PUBLISH_PROFILE }}
-        package: '${{ env.AZURE_WEBAPP_PACKAGE_PATH }}'  # Corrected path for deployment
+        package: .  # Corrected path for deployment
