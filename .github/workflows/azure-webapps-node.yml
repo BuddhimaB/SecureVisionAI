@@ -23,9 +23,9 @@ on:
   workflow_dispatch:
 
 env:
-  AZURE_WEBAPP_NAME: secure-vision-AI    # set this to your application's name
-  AZURE_WEBAPP_PACKAGE_PATH: 'server'      # set this to the path to your web app project, defaults to the repository root
-  NODE_VERSION: '20.x'                # set this to the node version to use
+  AZURE_WEBAPP_NAME: secure-vision-AI    # Set this to your application's name
+  AZURE_WEBAPP_PACKAGE_PATH: 'server'      # Set this to the path to your web app project
+  NODE_VERSION: '20.x'                    # Set this to the node version to use
 
 permissions:
   contents: read
@@ -44,6 +44,7 @@ jobs:
 
     - name: npm install, build, and test
       run: |
+        cd ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}  # Navigate to the server folder
         npm install
         npm run build --if-present
         npm run test --if-present
@@ -52,7 +53,7 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: node-app
-        path: ./${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
+        path: ./${{ env.AZURE_WEBAPP_PACKAGE_PATH }}  # Specify the path to the server folder
 
   deploy:
     permissions:
@@ -73,6 +74,6 @@ jobs:
       id: deploy-to-webapp
       uses: azure/webapps-deploy@v2
       with:
-        app-name: securevision-node-service
+        app-name: ${{ env.AZURE_WEBAPP_NAME }}  # Use the environment variable for app name
         publish-profile: ${{ secrets.AZURE_WEB_APP_PUBLISH_PROFILE }}
-        package: '${{ env.AZURE_WEBAPP_PACKAGE_PATH }}'
+        package: '${{ env.AZURE_WEBAPP_PACKAGE_PATH }}'  # Corrected path for deployment
