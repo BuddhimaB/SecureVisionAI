@@ -45,7 +45,7 @@ jobs:
     - name: npm install, build, and test
       run: |
         cd ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}  # Navigate to the server folder
-        npm install
+        npm install || { echo "npm install failed"; exit 1; }
         npm run build --if-present
         npm run test --if-present
 
