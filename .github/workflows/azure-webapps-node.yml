@@ -19,7 +19,7 @@
 
 on:
   push:
-    branches: [ "node-server" ]
+    branches: [ "Testing-web-Application" ]
   workflow_dispatch:
 
 env:
