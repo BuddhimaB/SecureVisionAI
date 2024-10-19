@@ -23,7 +23,7 @@ on:
   workflow_dispatch:
 
 env:
-  AZURE_WEBAPP_NAME: secure-vision-AI    # Set this to your application's name
+  AZURE_WEBAPP_NAME: securevision-node-service    # Set this to your application's name
   AZURE_WEBAPP_PACKAGE_PATH: '.'      # Set this to the path to your web app project
   NODE_VERSION: '20.x'                    # Set this to the node version to use
 
