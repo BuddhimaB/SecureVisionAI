@@ -74,5 +74,5 @@ jobs:
       uses: azure/webapps-deploy@v2
       with:
         app-name: ${{ env.AZURE_WEBAPP_NAME }}  # Use the environment variable for app name
-        publish-profile: ${{ secrets.AZURE_WEB_APP_PUBLISH_PROFILE }}
+        publish-profile: ${{ secrets.AZURE_WEB_APP_PUBLISH_PROFILE_ }}
         package: .  # Corrected path for deployment
