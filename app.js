@@ -7,7 +7,7 @@ const corsOptions = {
   origin: "*",
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"],
-  credentials: true, // Include this if you have sessions or cookies.
+  
 };
 
 const userController = require("./src/controllers/userController");
