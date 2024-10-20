@@ -3,13 +3,22 @@ const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
 const cors = require("cors");
+const corsOptions = {
+  origin: "*",
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+  credentials: true, // Include this if you have sessions or cookies.
+};
 
 const userController = require("./src/controllers/userController");
 const cctvController = require("./src/controllers/cctvController");
 const intrusionController = require("./src/controllers/intrusionController");
 const cameraController = require("./src/controllers/cameraController");
 
-app.use(cors({ origin: "*" }));
+app.use(cors(corsOptions));
+app.options("*", cors(corsOptions));
+app.use(express.json());
+
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
