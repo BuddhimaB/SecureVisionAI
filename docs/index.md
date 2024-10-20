@@ -4,10 +4,9 @@ Welcome to the comprehensive user manual for our Smart Monitoring Platform. This
 
 Explore the sections to learn more about each feature and how to use them effectively:
 
-- [Getting Started](/getting_started.md): Initial setup instructions.
-- [Detailed User Interface Guides](/user_interface/login_page.md): Step-by-step guides for each part of the system.
-- [Features](/features.md): Detailed explanation of features.
-- [FAQs](/faqs.md): Answers to common questions.
-- [Additional Resources](/additional_resources.md): Further reading and resources.
+- [Getting Started](getting_started.md): Initial setup instructions.
+- [Detailed User Interface Guides](./user_interface/login_page.md): Step-by-step guides for each part of the system.
+- [FAQs](faq.md): Answers to common questions.
+
 
 Thank you for choosing our platform. We hope this documentation helps you get the most out of it.
