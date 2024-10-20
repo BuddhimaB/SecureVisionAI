@@ -6,13 +6,13 @@ This section provides detailed instructions on how to set up your Smart Monitori
 
 Begin by registering an account through our user interface:
 
-- Navigate to the [Register Page](/user_interface/register_page.md) and fill out your details to create a new account.
+- Navigate to the [Register Page](./user_interface/register_page.md) and fill out your details to create a new account.
 
 ## Step 2: Camera Setup
 
 After logging in, connect your cameras:
 
-- Go to the [Dashboard](/user_interface/dashboard.md).
+- Go to the [Dashboard](./user_interface/dashboard.md).
 - Click on 'Add Camera' to integrate your security cameras with our platform. Follow on-screen instructions to enter camera details such as IP address and credentials.
 
 ## Step 3: Configure Settings
