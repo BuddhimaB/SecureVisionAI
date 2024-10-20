@@ -1,0 +1,25 @@
+/* Customize the look of your sidebar */
+.sidebar {
+    background-color: #f8f9fa;
+    border-right: 1px solid #dee2e6;
+}
+
+/* Style for the active link in the sidebar */
+.sidebar-link.is-active {
+    background-color: #007bff;
+    color: white;
+}
+
+/* General link styling in the sidebar */
+.sidebar-link {
+    color: #007bff;
+    padding: 0.5rem 1rem;
+    display: block;
+}
+
+/* Content styling */
+.content {
+    padding: 2rem;
+    line-height: 1.6;
+    font-size: 1rem;
+}
