@@ -1,17 +1,14 @@
-# Ninety Camera - Smart Monitoring Platform for Security Cameras
+# SecureVision AI - Smart Monitoring Platform for Security Cameras
 
-![GitHub language count](https://img.shields.io/github/languages/count/Ninety-Camera/web-backend)
-![GitHub top language](https://img.shields.io/github/languages/top/Ninety-Camera/web-backend)
-![GitHub repo size](https://img.shields.io/github/repo-size/Ninety-Camera/web-backend)
 
-Ninety Camera is a smart monitoring platform for security cameras which can detect human intrusions from camera footage and notify users about the intruder. The whole system is come up with a desktop application, mobile applicatin and a web application. This is the web server of the system which contain the backend of the web application and backend of the mobile application.
+SecureVision AI is a smart monitoring platform for security cameras which can detect human intrusions from camera footage and notify users about the intruder. The whole system is come up with a web application. This is the web server of the system which contain the backend of the web application.
 This server is responsible for
  - User Authentication
  - User Authrorization
  - User registration and login
- - Communicate between desktop and the mobile app
+ - Communicate between desktop
  - Send intrusion notifications
- - Communicate system data with the mobile app
+ 
 
 For the database of the application PostgreSQL is used. As well as for prisma ORM is used for managing the databsase. Currently azure postgreSQL database is used as the database server.
 
@@ -23,7 +20,6 @@ And following are the environmental variables that used for the project.
 
 You need to place above environmental variables on a .env files to run the application. As well as to run in the development environment you need to set PORT environmental variable also.
 
-And firebase config file is required to send the notifications to the mobile apps. Change the firebase-conf.json at src/services/. You can take this configuration file from firebase by creating a project.
 
 ## Provided endpoints and functionalities
  - User CRUD operations
@@ -37,12 +33,12 @@ And firebase config file is required to send the notifications to the mobile app
  - Prisma
  - PostgreSQL
  - SocketIO
- - Firebase
+ 
  
 ## Requirements
  - NodeJS installed in the PC
  - Locally or remote postgreSQL server
- - Firebase project
+ 
  
 ## Setup
  - Clone the Repository
@@ -59,10 +55,5 @@ And firebase config file is required to send the notifications to the mobile app
  
  ## Testing
   - Testing is done using Jest
-  - Testing is done inside docker containers
-  - To run tests you need to install docker to your system
-  - Execute `npm run docker:up` command to initialize the docker container
-  - Execute `npm test` command to run the tests
-  - Execute `npm run docker:down` command to stop the docker container
-  - All the tests are located inside the __tests__ directory
+  
 
