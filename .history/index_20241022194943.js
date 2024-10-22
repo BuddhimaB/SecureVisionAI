@@ -10,7 +10,7 @@ const cctvService = require("./src/services/cctvService");
 
 // Set up PostgreSQL connection
 const client = new Client({
-  connectionString: process.env.DATABASE_URL, 
+  connectionString: process.env.DATABASE_URL, // Use your connection string from environment variables
 });
 
 // Connect to the database
