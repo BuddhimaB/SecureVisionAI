@@ -4,12 +4,16 @@ const app = express();
 const bodyParser = require("body-parser");
 const cors = require("cors");
 
+
 const userController = require("./src/controllers/userController");
 const cctvController = require("./src/controllers/cctvController");
 const intrusionController = require("./src/controllers/intrusionController");
 const cameraController = require("./src/controllers/cameraController");
 
-app.use(cors({ origin: "*" }));
+app.use(cors(corsOptions));
+app.options("*", cors(corsOptions));
+app.use(express.json());
+
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
